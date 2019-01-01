@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#008161",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#969595",
+    "selectedColor": "#008161",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/main",
+        "text": "赛事",
+        "iconPath": "static/assets/logo.png",
+        "selectedIconPath": "static/assets/logo.png"
+      },
+      {
+        "pagePath": "pages/main",
+        "text": "活动",
+        "iconPath": "static/assets/logo.png",
+        "selectedIconPath": "static/assets/logo.png"
+      }
+    ]
+  }
+}
