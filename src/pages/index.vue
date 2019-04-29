@@ -6,12 +6,12 @@
 
 <script>
 import mixin from '../mixin.js'
-import Card from '@/components/Card'
+import card from '@/components/card'
 
 export default {
   mixins: [mixin],
   components: {
-    Card
+    card
   },
   data () {
     return {

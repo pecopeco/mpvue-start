@@ -16,14 +16,14 @@
       {
         "pagePath": "pages/main",
         "text": "赛事",
-        "iconPath": "static/assets/logo.png",
-        "selectedIconPath": "static/assets/logo.png"
+        "iconPath": "static/tabs/home.png",
+        "selectedIconPath": "static/tabs/home.png"
       },
       {
         "pagePath": "pages/main",
         "text": "活动",
-        "iconPath": "static/assets/logo.png",
-        "selectedIconPath": "static/assets/logo.png"
+        "iconPath": "static/tabs/home.png",
+        "selectedIconPath": "static/tabs/home.png"
       }
     ]
   }
