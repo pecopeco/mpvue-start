@@ -19,13 +19,6 @@ function request (url, form = {}, type) {
   //   orgName: 123456
   // }
   // Object.assign(compleForm, presetForm)
-  if (type === 'post' || type === 'delete' || type === 'put') {
-    let formData = new window.FormData()
-    for (let key in form) {
-      formData.append(key, form[key])
-    }
-    compleForm = formData
-  }
   let fly = new Fly()
   return fly.request(url, compleForm, {
     method: type,

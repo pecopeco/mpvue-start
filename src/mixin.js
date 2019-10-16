@@ -39,10 +39,6 @@ export default {
       }
       return resultTime
     },
-    async getUserData () {
-      let data = await this.$http.get(this.config.api_url + '/v1/profile/info')
-      this.store.dispatch('setUser', data)
-    },
     postUserInfo (userInfo) {
       this.$http.post(this.$config.api_url + '/v1/profile/profile', {
         info: userInfo

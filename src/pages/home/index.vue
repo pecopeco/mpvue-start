@@ -2,6 +2,7 @@
   section
     .card-wrap(@click="getData")
       card(:text="text")
+    button(@getuserinfo="getUserInfo" open-type="getUserInfo") 登录
 </template>
 
 <script>
@@ -13,15 +14,28 @@ export default {
   },
   data () {
     return {
-      data: '',
       text: '123'
     }
   },
   methods: {
     async getData () {
       console.log('start get')
-      this.$store.dispatch('setUser')
-      this.data = await this.$http.get(this.$config.api_url + '/search', {id: 1})
+      let data = await this.$http.get(this.$config.api_url + '/search', {id: 1})
+      this.$store.dispatch('setUser', data || '')
+    },
+    getUserInfo () {
+      // 授权检测
+      wx.getSetting({
+        success: (res) => {
+          if (res.authSetting['scope.userInfo']) {
+            wx.getUserInfo({
+              success: (res) => {
+                this.postUserInfo(res.userInfo)
+              }
+            })
+          }
+        }
+      })
     }
   },
   computed: {
