@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/main"
+    "pages/home/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,13 +14,13 @@
     "borderStyle": "black",
     "list": [
       {
-        "pagePath": "pages/main",
-        "text": "赛事",
+        "pagePath": "pages/home/main",
+        "text": "首页",
         "iconPath": "static/tabs/home.png",
         "selectedIconPath": "static/tabs/home.png"
       },
       {
-        "pagePath": "pages/main",
+        "pagePath": "pages/home/main",
         "text": "活动",
         "iconPath": "static/tabs/home.png",
         "selectedIconPath": "static/tabs/home.png"

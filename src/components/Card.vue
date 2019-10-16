@@ -1,7 +1,7 @@
 <template lang="pug">
   .card
     .text {{text}}
-    image(mode="scaleToFill" src="../static/images/user.png")
+    image(mode="scaleToFill" src="/static/images/user.png")
 </template>
 
 <script>

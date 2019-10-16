@@ -18,6 +18,11 @@ export default {
         delta
       })
     },
+    toast (text, delay) {
+      setTimeout(function () {
+        wx.showToast({title: text, icon: 'none', duration: delay || 2000})
+      }, 100)
+    },
     formatTime (time, yearKey = '-', monthKey = '-', dayKey = '',
       hasHour, hasMinute) {
       let date = new Date(time * 1000)
