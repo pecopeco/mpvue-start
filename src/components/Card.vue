@@ -13,16 +13,16 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import "../color"
+@import "~@/color"
 
 .card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
+  display flex
+  align-items center
+  justify-content center
+  padding 10px
   image {
-    width: 100px;
-    height: 100px;
+    width 100px
+    height 100px
   }
 }
 </style>
