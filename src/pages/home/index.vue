@@ -13,16 +13,15 @@ export default {
   },
   data () {
     return {
+      data: '',
       text: '123'
     }
   },
   methods: {
-    getData () {
+    async getData () {
       console.log('start get')
-      this.$store.dispatch('fetchUserInfo')
-      this.$http.get(this.$config.api_url + '/search').then((res) => {
-        console.log(res)
-      })
+      this.$store.dispatch('setUser')
+      this.data = await this.$http.get(this.$config.api_url + '/search', {id: 1})
     }
   },
   computed: {

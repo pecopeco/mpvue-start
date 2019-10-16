@@ -39,6 +39,15 @@ export default {
       }
       return resultTime
     },
+    async getUserData () {
+      let data = await this.$http.get(this.config.api_url + '/v1/profile/info')
+      this.store.dispatch('setUser', data)
+    },
+    postUserInfo (userInfo) {
+      this.$http.post(this.$config.api_url + '/v1/profile/profile', {
+        info: userInfo
+      })
+    },
     // 非空验证
     validate (key) {
       if (typeof (key) === 'number') {
@@ -54,6 +63,9 @@ export default {
   computed: {
     userInfo () {
       return this.$store.state.userInfo
+    },
+    missingSkey () {
+      return this.$store.state.missingSkey
     }
   },
   watch: {

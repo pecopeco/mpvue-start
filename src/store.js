@@ -6,18 +6,23 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   strict: true,
   state: {
+    missingSkey: false,
     userInfo: ''
   },
   actions: {
-    fetchUserInfo: ({ commit, state }, data) => {
-      commit('SET_USER', {
-        name: 'yang'
-      })
+    setUser: ({ commit }, data) => {
+      commit('setUser', data)
+    },
+    setSkeyStatus: ({ commit }) => {
+      commit('setSkeyStatus')
     }
   },
   mutations: {
-    SET_USER (state, data) {
+    setUser (state, data) {
       state.userInfo = data
+    },
+    setSkeyStatus (state) {
+      state.missingSkey = !state.missingSkey
     }
   },
   getters: {}

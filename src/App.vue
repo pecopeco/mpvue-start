@@ -1,6 +1,55 @@
 <script>
 export default {
+  watch: {
+    missingSkey (missingSkey) {
+      // 检测skey是否意外丢失，尝试重新登录
+      console.log('skey丢失，重新登录')
+      this.doLogin()
+      this.store.dispatch('setSkeyStatus')
+    }
+  },
+  methods: {
+    checkSession () {
+      // 首次登录
+      if (!wx.getStorageSync('token')) {
+        console.log('首次登录')
+        this.doLogin()
+        return
+      }
+      // 检查 session_key 是否过期
+      wx.checkSession({
+        success: () => {
+          this.setCookie(wx.getStorageSync('token'))
+          console.log('session_key未过期')
+        },
+        fail: () => {
+          console.log('session_key过期，重新登录')
+          this.doLogin()
+        }
+      })
+    },
+    doLogin () {
+      // 获取code，换取skey
+      wx.login({
+        success: res => {
+          this.fetchSkey(res.code)
+        },
+        fail (err) {
+          console.error('login fail: ', err)
+        }
+      })
+    },
+    async fetchSkey (code) {
+      let data = await this.$http.get(this.config.api_url + '/site/wx', {code: code})
+      wx.setStorageSync('token', data.skey)
+      this.setCookie(data.skey)
+    },
+    setCookie (token) {
+      this.$http.config.headers = {'cookie': 'PHPSESSION=' + token}
+    }
+  },
   mounted () {
+    this.checkSession()
   }
 }
 </script>

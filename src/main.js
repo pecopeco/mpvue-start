@@ -56,6 +56,10 @@ function request (url, form = {}, type) {
       503: '服务不可用，服务器暂时过载或维护.',
       504: '网关超时'
     }
+    if (err.status === 401) {
+      // 意外丢失skey
+      store.dispatch('setSkeyStatus')
+    }
     if (err.status >= 300) {
       const errortext = codeMessage[err.status] || err.response.statusText
       wx.showToast({title: errortext, icon: 'none', duration: 2000})
