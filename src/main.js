@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App'
 import store from './store'
-import config from './config'
 import Fly from 'flyio/dist/npm/wx'
 import mixin from './mixin'
 
@@ -11,6 +10,11 @@ App.mpType = 'app'
 Vue.mixin(mixin)
 
 Vue.prototype.$store = store
+
+let config = {
+  api_url: 'https://mp.weixin.qq.com'
+}
+
 Vue.prototype.$config = config
 
 function request (url, form = {}, type) {
