@@ -1,4 +1,4 @@
-小程序mpvue模板，基于pug、stylus、fly、vuex搭建
+> 小程序mpvue模板，基于pug、stylus、fly、vuex搭建
 
 ## 安装
 ```
