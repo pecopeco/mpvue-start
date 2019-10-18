@@ -77,7 +77,7 @@
     "vue-style-loader": "^4.1.0",
     "mkdirp": "^0.5.1",
     "mpvue-loader": "^2.0.0",
-    "mpvue-template-compiler": "^2.0.0",
+    "mpvue-template-compiler": "^2.0.6",
     "mpvue-webpack-target": "^1.0.3",
     "webpack-mpvue-vendor-plugin": "^2.0.0",
     "webpack-mpvue-asset-plugin": "^2.0.0",
