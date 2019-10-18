@@ -1,4 +1,6 @@
-> 小程序mpvue模板，基于pug、stylus、fly、vuex搭建
+# mpvue-start
+
+> 小程序模板，使用 mpvue 框架搭建，包含 pug、stylus、fly、vuex 等组件
 
 ## 安装
 ```
