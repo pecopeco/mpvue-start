@@ -1,5 +1,5 @@
 <template lang="pug">
-  section
+  .home
     .card-wrap(@click="getData")
       card(:text="text")
     button(@getuserinfo="getUserInfo" open-type="getUserInfo") 登录
@@ -50,7 +50,6 @@ export default {
 <style scoped lang="stylus">
 @import "~@/color"
 
-.card-wrap {
-  padding 10px
+.home {
 }
 </style>
