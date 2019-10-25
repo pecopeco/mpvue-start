@@ -39,8 +39,10 @@ export default {
     },
     async fetchSkey (code) {
       let data = await this.$http.get(this.config.api_url + '/site/wx', {code: code})
-      wx.setStorageSync('token', data.skey)
-      this.setCookie(data.skey)
+      if (data && data.skey) {
+        wx.setStorageSync('token', data.skey)
+        this.setCookie(data.skey)
+      }
     },
     setCookie (token) {
       this.$http.config.headers = {'cookie': 'PHPSESSION=' + token}
